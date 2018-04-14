@@ -10,15 +10,15 @@ exports.run = (client, message, args) => {
   return message.author.sendEmbed(ozelmesajuyari); }
   message.channel.send("Uyarıyorum!")
   .then(m => {
-        m.edit( 'Kullanıcıya `@Uyarıldı` Yetkisini Verdim Ve <#434619385865568257> Kanalına Bildirdim!İyi Günler!');
+        m.edit( 'Kullanıcıya `@Uyarıldı` Yetkisini Verdim Ve `#mod-log` Kanalına Bildirdim!İyi Günler!');
       });
   let guild = message.guild
   let reason = args.slice(1).join(' ');
   let user = message.mentions.users.first();
   let modlog = guild.channels.find('name', 'mod-log');
   let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Uyarıldı');
-  if (!modlog) return message.reply('`mod-log` kanalını bulamıyorum.').catch(console.error);
   if (!muteRole) return message.reply('`Uyarıldı` adlı bir rol bulamıyorum.').catch(console.error);
+   if (!modlog) return message.reply('`mod-log` kanalını bulamıyorum.').catch(console.error);
   if (message.mentions.users.size < 1) return message.reply('Kimi Uyaracağımı yazmalısın.').catch(console.error);
   if (reason.length < 1) return message.reply('Uyarma sebebini yazmalısın.').catch(console.error);
   const embed = new Discord.RichEmbed()
