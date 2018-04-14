@@ -16,7 +16,7 @@ exports.run = function(client, message, args) {
         .setColor("RANDOM")
     .setTimestamp()
     .setAuthor(message.author.username, message.author.avatarURL)
-  .addField('❯  Silinen Mesaj Sayısı','❯ ' +mesajsayisi+' Adet Mesaj Sildim')
+  .addField('❯  Silinen Mesaj Sayısı',mesajsayisi)
   .addField('❯  Yetkili',`<@${message.author.id}>`)
   .addField('❯  Sonuç','Sonuç Başarılıdır')
 
