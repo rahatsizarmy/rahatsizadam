@@ -3,6 +3,10 @@ const client = new Discord.Client();
 
 exports.run = (client, message, args) => {
 if (message.author.id !== '430723591223640064') return message.reply('Yapımcım Sen Değilsin...');
+message.channel.send("**Sunucu listelerin kilit açılıyor...**")
+.then(m => {
+      m.edit(":white_check_mark:**Sunucu listelerinin kilitleri başarılı birşekilde açıldı!**");
+    })
 if (message.channel.type !== 'dm') {
     const ozelmesajkontrol = new Discord.RichEmbed()
     .setColor("RANDOM")
