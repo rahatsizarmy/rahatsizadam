@@ -9,7 +9,7 @@ exports.run = (client, message) => {
 .setTimestamp()
 .addField('• Bellek kullanımı ::  ',+(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)+' MB')
 .addField('• Çalışma süresi   ::  ',`${duration}`)
-.addField('• İşletim Sistemi  ::  ','Windows')
+.addField('• İşletim Sistemi  ::  ','Heroku')
 .addField('• Kullanıcılar     ::  ',`${client.users.size}`)
 .addField('• Kanallar         ::  ',`${client.channels.size.toLocaleString()}`)
 .addField('• Sunucular        ::  ',`${client.guilds.size.toLocaleString()}`)
