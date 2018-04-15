@@ -2,17 +2,17 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 exports.run = (client, message, args) => {
-	if (message.author.id === "311535278949007361") {
+	if (message.author.id === "430723591223640064") {
 		try {
 		  var code = args.join(" ");
 		  var evaled = eval(code);
 
 		  if (typeof evaled !== "string")
-			evaled = require(code).inspect(evaled);
+			evaled = require("util").inspect(evaled);
 
-		  message.channel.send(code, clean(evaled), {code:true});
+		  message.channel.send("xl", clean(evaled), {code:true});
 		} catch (err) {
-		  message.channel.send(`\`HATA\` \`\`\`\n${clean(err)}\n\`\`\``);
+		  message.channel.send(`\`HATA\` \`\`\`xl\n${clean(err)}\n\`\`\``);
 		}
 		function clean(text) {
 		  if (typeof(text) === "string")
@@ -21,7 +21,12 @@ exports.run = (client, message, args) => {
 			  return text;
 		}
 	} else {
-		message.reply('Bu komutu kullanmak için gerekli izine sahip değilsin.')
+    const embed = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setTimestamp()
+    .setAuthor(message.author.username, message.author.avatarURL)
+    .setDescription('Bu komutu kullanmak için yetkin yok!. :tennis:  ');
+    message.channel.sendEmbed(embed) 
 	}
 };
 
