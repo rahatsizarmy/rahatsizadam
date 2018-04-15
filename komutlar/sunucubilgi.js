@@ -14,15 +14,16 @@ exports.run = (client, message, params) => {
       const sunucubilgi = new Discord.RichEmbed()
       .setColor("RANDOM")
     .setTimestamp()
-    .setAuthor(message.guild.name, message.guild.iconURL)
-    .addField('Ad:', message.guild.name)
-    .addField('ID', message.guild.id)
-    .addField('Ana kanal:', message.guild.defaultChannel)
-    .addField('Bölge', message.guild.region)
-    .addField('Üye sayısı:', message.guild.memberCount)
-    .addField('Sahibi:', message.guild.owner + ' (' + message.guild.ownerID + ')')
-    .addField('Kanal sayısı:', message.guild.channels.size)
-    .addField('Oluşturulma tarihi:', message.guild.createdAt)
+    .addField('❯  Sunucu Adı:', message.guild.name)
+    .addField('❯  Sunucu ID', message.guild.id)
+    .addField('❯  Ana kanal:', message.guild.defaultChannel)
+    .addField('❯  Bölge:', message.guild.region)
+    .addField('❯  Üye sayısı:', message.guild.memberCount)
+    .addField('❯  Sahibi:', message.guild.owner + ' (' + message.guild.ownerID + ')')
+    .addField('❯  Kanal sayısı:', message.guild.channels.size)
+    .addField('❯  Oluşturulma tarihi:', message.guild.createdAt)
+    .addField('❯  Sunucu İconu:','Url Hali:\n'+ message.guild.iconURL+'\nResim Hali:')
+    .setImage(message.guild.iconURL)
     return message.channel.sendEmbed(sunucubilgi);
     }
 };
@@ -30,7 +31,7 @@ exports.run = (client, message, params) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['sunucu', 'sunucu bilgi', 'sbilgi'],
+  aliases: ['sunucu', 'sunucu bilgi', 'sbilgi','sb'],
   permLevel: 0
 };
 
