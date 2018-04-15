@@ -21,12 +21,7 @@ exports.run = (client, message, args) => {
 			  return text;
 		}
 	} else {
-    const embed = new Discord.RichEmbed()
-    .setColor("RANDOM")
-    .setTimestamp()
-    .setAuthor(message.author.username, message.author.avatarURL)
-    .setDescription('Bu komutu kullanmak için yetkin yok!. :tennis:  ');
-    message.channel.sendEmbed(embed) 
+		message.reply('Bu komutu kullanmak için gerekli izine sahip değilsin.')
 	}
 };
 
