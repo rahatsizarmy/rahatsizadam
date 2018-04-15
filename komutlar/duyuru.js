@@ -8,7 +8,7 @@ if (mesaj.length < 1) return message.reply('Yazmam için herhangi bir şey yazma
   .setColor("RANDOM")
   .setTimestamp()
   .setAuthor(message.author.username, message.author.avatarURL)
-  .addField("❯  __ "+mesaj+'__','**Okusanız İyi Olur Önemli Olabilir! @here**')
+  .addField("❯ "+mesaj+'','**Okusanız İyi Olur Önemli Olabilir! @here**')
   return message.channel.sendEmbed(embed)
 };
 
