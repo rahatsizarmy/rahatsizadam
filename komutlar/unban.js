@@ -25,7 +25,7 @@ exports.run = (client, message, args) => {
   .setColor("RANDOM")
     .setTimestamp()
     .addField('Eylem:', 'Ban kaldırma')
-    .addField('Kullanıcı:', `${user.username}#${user.discriminator} (${user.id})`)
+    .addField('Kullanıcı İdi:', `(${user.id})`)
     .addField('Yetkili:', `${message.author.username}#${message.author.discriminator}`)
     .addField('Sebep', reason);
   return guild.channels.get(modlog.id).sendEmbed(embed);
