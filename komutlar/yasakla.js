@@ -33,12 +33,12 @@ exports.run = (client, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: [],
+  aliases: ["ban"],
   permLevel: 2
 };
 
 exports.help = {
-  name: 'ban',
+  name: 'yasakla',
   description: 'İstediğiniz kişiyi banlar.',
-  usage: 'ban [kullanıcı] [sebep]'
+  usage: 'yasakla [kullanıcı] [sebep]'
 };
