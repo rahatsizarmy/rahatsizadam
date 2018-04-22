@@ -79,6 +79,10 @@ client.unload = command => {
 };
 
 client.on('message', msg => {
+	  if (!msg.content.startsWith(prefix)) {
+    console.log(`[${msg.guild.name}][${msg.author.tag}]  : ${msg.content}`);
+    return;
+  }
   if (msg.content.toLowerCase() === 'sa') {
     msg.reply('Aleyküm selam,  hoş geldin ^^');
   }
