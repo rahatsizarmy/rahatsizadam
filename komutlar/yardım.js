@@ -23,7 +23,8 @@ exports.run = (client, message, params) => {
     .addField('❯  Destek Sistemimiz','`çağrılar` adında bir kanal açın.\n[r,çağır](https://discord.gg/yakinda) == Desteği Çağırır.\n[r,bildir](https://discord.gg/yakinda) ==  Bildiriniz Yetkililere Gönderir.')
     .addField('❯  Eğlence Komutları','[r,sor](https://discord.gg/yakinda) ==  Bota Sorular Sorarsınız.\n[r,taş-kağıt-makas](https://discord.gg/yakinda) ==  Bot İle Taş-Kağıt-Makas Oynarsınız.\n[r,günaydın](https://discord.gg/yakinda)  ==  Günaydın Gifi Atar.\n[r,yaz](https://discord.gg/yakinda)  ==  Bota Yazı Yazdırırsınız.\n[r,merhaba](https://discord.gg/yakinda) == Merhaba Gifi Atar.')
     .addField('❯  Moderasyon Komutları','[r,yasakla](https://discord.gg/yakinda) == Birini Sunucudan Yasaklar.\n[r,unban](https://discord.gg/yakinda) ==  (İD ile)Birinin Yasağını Açar.\n[r,at](https://discord.gg/yakinda)  ==  Birini Sunucudan Atar.\n[r,sil](https://discord.gg/yakinda) ==  Belirtilen Sayı Kadar Mesaj Siler.\n[r,uyar](https://discord.gg/yakinda)  == Belirtilen Kişiye `@Uyarıldı` Rolü Verir.\n[r,sustur](https://discord.gg/yakinda) Belirtilen Kişiyi `@Susturulmuş` Rolü Verir.\n[r,duyuru](https://discord.gg/yakinda) ==  Güzel Bir Duyuru Görünmü Sağlar.')
-    .addField('❯  Admin Komutları','`Güvenlik amacıyla burasını görüntüleyemiyorum.\n\n© 2018 Rahatsız Adam|ßatu Murt#7406 tarfından yapıldı.`')
+    .addField('❯  Admin Komutları','`Güvenlik amacıyla burasını görüntüleyemiyorum.)
+    .setFooter('© 2018 Rahatsız Adam|ßatu Murt#7406 tarfından yapıldı.')
     return message.author.sendEmbed(pingozel)
   } else {
     let command = params[0];
