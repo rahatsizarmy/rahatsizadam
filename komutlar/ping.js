@@ -1,10 +1,10 @@
 const Discord = require('discord.js');
 exports.run = function(client, message, args) {
-  const embed = new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
   .setColor("RANDOM")
   .setAuthor(message.author.username, message.author.avatarURL)
-  .addField('Pingim   ==  '+ client.ping)
-  return message.author.sendEmbed(embed)
+  .setDescription('Pingim   ==  '+ client.ping)
+    return message.channel.sendEmbed(embed);
 };
 
 exports.conf = {
