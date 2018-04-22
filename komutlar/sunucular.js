@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 exports.run = (client, message, args) => {
-if (message.author.id !== '430723591223640064') return message.reply('Yapımcım Sen Değilsin...');
 message.channel.send("**Sunucu listelerin kilit açılıyor...**")
 .then(m => {
       m.edit(":white_check_mark:**Sunucu listelerinin kilitleri başarılı birşekilde açıldı!**");
@@ -17,7 +16,7 @@ if (message.channel.type !== 'dm') {
 const embed = new Discord.RichEmbed()
 .setColor("RANDOM")
 .setDescription('___***Batu Bilgiler Aşşağıda***___')
-.addField('Sunucu İsimler   ::  \n','**'+ client.guilds.map(g => g.name)+'**')
+.addField('Sunucu İsimler   ::  \n','**'+ client.guilds.map(g =>`\n${g.name} - ${g.id}\n`)+'**')
 .addField('Sunucu Sayıları  ::  \n','**'+ client.guilds.size+'**')
 return message.author.sendEmbed(embed)
 };
@@ -32,6 +31,6 @@ return message.author.sendEmbed(embed)
       
       exports.help = {
         name: 'sunucular',
-        description: 'Kod denemek için kullanılır.',
-        usage: 'eval [kod]'
+        description: 'Sunucuları gösterir.',
+        usage: 'sunucular'
       };
