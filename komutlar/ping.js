@@ -1,9 +1,10 @@
 const Discord = require('discord.js');
 exports.run = function(client, message, args) {
-  message.channel.send("Hesaplıyorum...")
-  .then(m => {
-        m.edit( '**Pingim : __'+ client.ping +'__ ms.**');
-      });
+  const embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setAuthor(message.author.username, message.author.avatarURL)
+  .addField('Pingim   ==  '+ client.ping)
+  return message.author.sendEmbed(embed)
 };
 
 exports.conf = {
