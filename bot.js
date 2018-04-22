@@ -8,9 +8,11 @@ require('./util/eventLoader')(client);
 
 var prefix = ayarlar.prefix;
 
-const log = message => {
-  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
-};
+client.on('message', msg => {
+  if (!msg.content.startsWith(prefix)) {
+    console.log(`[${msg.author.tag}]  : ${msg.content}`);
+    return;
+  };
 
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
@@ -78,11 +80,6 @@ client.unload = command => {
   });
 };
 client.on('message', msg => {
-  if (!msg.content.startsWith(prefix)) {
-    console.log(`[${msg.author.tag}]  : ${msg.content}`);
-    return;
-  }
-
   if (msg.content.toLowerCase() === 'sa') {
     msg.reply('Aleyküm selam,  hoş geldin ^^');
   }
