@@ -1,20 +1,3 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Marketplace
-Explore
- @rahatsizarmy
-Sign out
-0
-0 0 rahatsizarmy/rahatsizadam
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights  Settings
-rahatsizadam/komutlar/yardım.js
-0b99d9d  18 minutes ago
-@rahatsizarmy rahatsizarmy Update yardım.js
-     
-51 lines (43 sloc)  3.63 KB
 const Discord = require('discord.js');
 const ayarlar = require('../ayarlar.json');
 
