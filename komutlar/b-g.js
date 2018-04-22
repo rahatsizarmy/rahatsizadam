@@ -16,13 +16,7 @@ exports.run = (client, message, args) => {
     let modlog = guild.channels.find('name', 'bot-güncellemeler');
     if (!modlog) return message.reply('`bot-güncellemeler` kanalını bulamıyorum.');
 
-    guild.channels.get(modlog.id).send("@here **Bana Güncel Geldi**") 
-    const embed = new Discord.RichEmbed()
-    .setColor("RANDOM")
-      .setTimestamp()
-      .addField('❯ Yeni Komut','`r,taş-kağıt-makas`')
-      .addField('❯ Teşekkürler', `<@${message.author.id}>`)
-    return guild.channels.get(modlog.id).sendEmbed(embed);
+    guild.channels.get(modlog.id).send("@here `sunucubilgi` Komutu güncellendi.\nKomut düzenlendi.Yapan : ßatu Murt#7406") 
   };
 
   exports.conf = {
