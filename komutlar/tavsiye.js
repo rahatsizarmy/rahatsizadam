@@ -3,7 +3,7 @@ const ayarlar = require('../ayarlar.json');
 
 exports.run = (client, message, args) => {
 let mesaj = args.slice(0).join(' ');
-if (mesaj.length < 1) return message.reply('Yazmam için herhangi bir şey yazmalısın.');
+if (mesaj.length < 1) return message.reply('Tavsiyeni Yazmalısın.');
 const embed = new Discord.RichEmbed()
 .setAuthor(message.author.username, message.author.avatarURL)
 .setDescription(message.author.username +' Tavsiyen İçin Sana Çok Tavsiye Ederiz\n\nGereksiz Kullanımın Cezası Vardır.')
