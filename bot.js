@@ -8,7 +8,7 @@ require('./util/eventLoader')(client);
 
 var prefix = ayarlar.prefix;
 
-client.on('message', msg => {
+const log = message => {
   if (!msg.content.startsWith(prefix)) {
     console.log(`[${msg.author.tag}]  : ${msg.content}`);
     return;
