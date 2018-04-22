@@ -16,10 +16,10 @@ client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 fs.readdir('./komutlar/', (err, files) => {
   if (err) console.error(err);
-  log(`${files.length} komut yüklenecek.`);
+  log(`${files.length} Komut Hazırlanacak.`);
   files.forEach(f => {
     let props = require(`./komutlar/${f}`);
-    log(`Yüklenen komut: ${props.help.name}.`);
+    log(`Hazır Komut  : ${props.help.name}.`);
     client.commands.set(props.help.name, props);
     props.conf.aliases.forEach(alias => {
       client.aliases.set(alias, props.help.name);
@@ -77,12 +77,12 @@ client.unload = command => {
     }
   });
 };
-
 client.on('message', msg => {
-	  if (!msg.content.startsWith(prefix)) {
+  if (!msg.content.startsWith(prefix)) {
     console.log(`[${msg.author.tag}]  : ${msg.content}`);
     return;
   }
+
   if (msg.content.toLowerCase() === 'sa') {
     msg.reply('Aleyküm selam,  hoş geldin ^^');
   }
