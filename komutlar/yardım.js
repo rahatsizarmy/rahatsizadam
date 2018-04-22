@@ -12,7 +12,7 @@ exports.run = (client, message, params) => {
     .setColor("RANDOM")
     .setTimestamp()
     .setAuthor(message.author.username, message.author.avatarURL)
-    .setDescription('Özel mesajlarını kontrol et. :postbox:');
+    .setDescription('Özel mesajlarını kontrol et. :postbox:\n\n***__Linkler__***\n[Destek Sunucum](https://discord.gg/9f82q)\n[Davet Linkim](https://discordapp.com/oauth2/authorize?client_id=434771960849760258&scope=bot&permissions=2146958591)');
     message.channel.sendEmbed(ozelmesajkontrol) }
     const pingozel = new Discord.RichEmbed()
     .setColor("RANDOM")
