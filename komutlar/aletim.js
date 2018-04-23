@@ -24,6 +24,6 @@ exports.conf = {
 
 exports.help = {
   name: 'aletim',
-  description: 'Bot aletinizi söyler.',
+  description: 'Aletinizin kaç cm olduğunu ölçer.',
   usage: 'aletim'
 };
