@@ -82,14 +82,6 @@ client.on('message', msg => {
     console.log(`[${msg.author.tag}]  : ${msg.content}`);
     return;
   }
-
-  if (msg.content.toLowerCase() === 'sa') {
-    msg.reply('Aleyküm selam,aramıza hoşgeldin!');
-  }
-  if (msg.content.toLowerCase() === 'r,çağır') {
-    msg.reply('**Çağrın Yetkililere İletildi Yakında Burdalar! Sen Merak Etme!**');
-    msg.react("✅")
-  }
 });
 
 
