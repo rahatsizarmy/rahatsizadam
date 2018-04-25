@@ -3,7 +3,7 @@ exports.run = (client, message, args) => {
 
   if (!message.guild) {
   const ozelmesajuyari = new Discord.RichEmbed()
-  .setColor("RANDOM")
+  .setColor(0xFF0000)
   .setTimestamp()
   .setAuthor(message.author.username, message.author.avatarURL)
   .addField(':warning: Uyarı :warning:', '`sustur` adlı komutu özel mesajlarda kullanamazsın.')
@@ -18,11 +18,11 @@ exports.run = (client, message, args) => {
   if (reason.length < 1) return message.reply('Susturma sebebini yazmalısın.').catch(console.error);
   if (message.mentions.users.size < 1) return message.reply('Kimi susturacağını yazmalısın.').catch(console.error);
   const embed = new Discord.RichEmbed()
-  .stColor("RANDOM")
+    .setColor(0x00AE86)
     .setTimestamp()
-    .addField('Eylem:', 'Susturma')
-    .addField('Kullanıcı:', `${user.username}#${user.discriminator} (${user.id})`)
+    .addField('Susturulma KOmutu Kullanıldı', 'Bilgiler alta')
     .addField('Yetkili:', `${message.author.username}#${message.author.discriminator}`)
+    .addField('Kullanıcı:', `${user.username}#${user.discriminator} (${user.id})`)
     .addField('Sebep', reason);
 
   if (!message.guild.member(client.user).hasPermission('MANAGE_ROLES_OR_PERMISSIONS')) return message.reply('Gerekli izinlere sahip değilim.').catch(console.error);
