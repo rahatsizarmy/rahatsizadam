@@ -1,14 +1,12 @@
-const chalk = require('chalk');
-const moment = require('moment');
-const Discord = require('discord.js');
-const ayarlar = require('../ayarlar.json');
+client.on("guildCreate", guild => {
+    client.user.setPresence({ game: { name: '' + prefix + 'yardım | ' + client.guilds.size + ' sunucu | V.2.0.1', type: 1 } });
+    client.channels.get("438704752633577482").sendMessage(`**--------------------------------------------------------------------------**\n__**SUNUCUYA KATILDIM**__\n\n   **Sunucu Adı**\n    ${guild.name}\n   **Sunucu ID**\n    ${guild.id}\n   **Sahibi**\n    ${guild.owner.user.tag}\n   **Sahip ID**\n    ${guild.owner.user.id}\n**--------------------------------------------------------------------------**`);
+});
 
-var prefix = ayarlar.prefix;
+client.on("ready", guild => {
+    client.user.setPresence({ game: { name: '' + prefix + 'yardım | ' + client.guilds.size + ' sunucu | V.2.0.1', type: 1 } });
+});
 
-module.exports = client => {
-  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: Tüm komutlar başarıyla yüklendi StormBot`);
-  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: ${client.user.username} ismi ile giriş yapıldı!`);
-  client.user.setPresence ({ game: { name: `${prefix}yardım | ${client.guilds.size} sunucu | V.2.0.1`, url: 'https://www.twitch.tv/batumurt1', type: 0 } });
-  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: Oyun ismi ayarlandı!`);
-  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: Şu an ` + client.channels.size + ` adet kanala, ` + client.guilds.memberCount + ` adet sunucuya ve ` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`);
-};
+client.on("guildDelete", guild => {
+    client.user.setPresence({ game: { name: '' + prefix + 'yardım | ' + client.guilds.size + ' sunucu | V.2.0.1', type: 1 } });
+    client.channels.get("438704752633577482").sendMessage(`**--------------------------------------------------------------------------**\n__**SUNUCUDAN AYRILDIM**__\n\n   **Sunucu Adı**\n    ${guild.name}\n   **Sunucu ID**\n    ${guild.id}\n   **Sahibi**\n    ${guild.owner.user.tag}\n   **Sahip ID**\n    ${guild.owner.user.id}\n**--------------------------------------------------------------------------**`);
