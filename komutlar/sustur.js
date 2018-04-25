@@ -20,9 +20,9 @@ exports.run = (client, message, args) => {
   const embed = new Discord.RichEmbed()
     .setColor(0x00AE86)
     .setTimestamp()
-    .addField('Susturulma KOmutu Kullanıldı', 'Bilgiler alta')
-    .addField('Yetkili:', `${message.author.username}#${message.author.discriminator}`)
-    .addField('Kullanıcı:', `${user.username}#${user.discriminator} (${user.id})`)
+    .addField('Susturulma Komutu Kullanıldı', 'Bilgiler alta')
+    .addField('Susturan:', `${message.author.username}#${message.author.discriminator}`)
+    .addField('Susturulan:', `${user.username}#${user.discriminator} (${user.id})`)
     .addField('Sebep', reason);
 
   if (!message.guild.member(client.user).hasPermission('MANAGE_ROLES_OR_PERMISSIONS')) return message.reply('Gerekli izinlere sahip değilim.').catch(console.error);
