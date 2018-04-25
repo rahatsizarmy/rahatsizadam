@@ -10,7 +10,7 @@ exports.run = (client, message, args) => {
           
           const embed = new Discord.RichEmbed()
           .setAuthor(message.author.username, message.author.avatarURL)
-          .setDescription(`${sonuc}`)
+          .setDescription('Senin aletin **'+ sonuc + '**')
           .setColor("RANDOM")
           return message.channel.sendEmbed(embed);
 };
