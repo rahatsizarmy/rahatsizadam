@@ -15,10 +15,10 @@ exports.run = (client, message, params) => {
       .setColor("RANDOM")
     .setTimestamp()
     .setDescription(message.guild.name +' ('+ message.guild.id + ')')
+    .setThumbnail(message.guild.iconURL)
     .addField('❯  Sunucunun Bilgileri:','\n•Bölge  :  `'+ message.guild.region +'`\n•Oluşturulma tarihi : `'+ message.guild.createdAt +'`')
     .addField('❯  Kişilerle İlgili:','•Kişi sayısı :  '+ message.guild.memberCount +'\n•Sahibi  :'+ message.guild.owner + ' (' + message.guild.ownerID + ')')
     .addField('❯  Kanal Bilgileri :','•Kanal Sayısı  :  ' + message.guild.channels.size +'\n•AFK kanalı : '+ message.guild.afkChannel)
-    .setImage(message.guild.iconURL)
     return message.channel.sendEmbed(sunucubilgi);
     }
 };
