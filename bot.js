@@ -12,7 +12,7 @@ const log = message => {
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
 };
 client.on("guildCreate", guild => {
-    client.user.setPresence({ game: { name: ''+' Bir sunucuya eklendim', type: 2 } });
+    client.user.setPresence({ game: { name: ''+' Bir sunucuya eklendim', type: 3 } });
     client.channels.get("439843991014473739").sendMessage(`**--------------------------------------------------------------------------**\n__**SUNUCUYA KATILDIM**__\n\n   **Sunucu Adı**\n    ${guild.name}\n   **Sunucu ID**\n    ${guild.id}\n   **Sahibi**\n    ${guild.owner.user.tag}\n   **Sahip ID**\n    ${guild.owner.user.id}\n**--------------------------------------------------------------------------**`);
 });
 
@@ -21,7 +21,7 @@ client.on("ready", guild => {
 });
 
 client.on("guildDelete", guild => {
-    client.user.setPresence({ game: { name: ''+ ' Bir sunucudan çıkarıldım', type: 2 } });
+    client.user.setPresence({ game: { name: ''+ ' Bir sunucudan çıkarıldım', type: 3 } });
     client.channels.get("439843991014473739").sendMessage(`**--------------------------------------------------------------------------**\n__**SUNUCUDAN AYRILDIM**__\n\n   **Sunucu Adı**\n    ${guild.name}\n   **Sunucu ID**\n    ${guild.id}\n   **Sahibi**\n    ${guild.owner.user.tag}\n   **Sahip ID**\n    ${guild.owner.user.id}\n**--------------------------------------------------------------------------**`);
 });
 client.commands = new Discord.Collection();
