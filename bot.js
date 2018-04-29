@@ -92,6 +92,14 @@ client.on('message', msg => {
     return;
   }
 });
+client.on('message', msg => {
+  if (msg.content.toLowerCase() === 'sa') {
+    msg.react('🇦')
+    msg.react('💜')
+    msg.react('🇸')  
+    msg.react('💚')
+  }
+});
 
 
 
