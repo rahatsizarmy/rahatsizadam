@@ -8,7 +8,7 @@ exports.run = (client, message, params) => {
     .setColor("RANDOM")
     .setAuthor(message.author.username, message.author.avatarURL)
     .attachFile('https://cdn.discordapp.com/avatars/434771960849760258/b546921364b470cc10213d6c3e4ca6c3.png?size=2048')
-    .title('《 Komut Listesi 》\n\n')
+    .settitle('《 Komut Listesi 》\n\n')
     .setThumbnail('https://cdn.discordapp.com/avatars/434771960849760258/b546921364b470cc10213d6c3e4ca6c3.png?size=2048')
     .addField('❯  Genel Komutlar','[r,tavsiye](https://discord.gg/yakinda)  •  Yapımcıya tavsiye yollarsınız.\n[r,yardım](https://discord.gg/yakinda)  •  Botun Komutlarını Gösterir.\n[r,avatar](https://discord.gg/yakinda) •  Etiketledğiniz Kişinin Avatarını Verir.\n[r,sunucubilgi](https://discord.gg/yakinda)  ==  Sunucu Hakkında Bilgi Verir.\n[r,ping](https://discord.gg/yakinda) • Botun Pingini Gösterir.\n[r,bilgi](https://discord.gg/yakinda)  • Bot Hakkında Bilgi Verir.\n[r,kullanıcıbilgi](https://discordapp.gg/yakinda) • Etiketlene kişinin hakkında bilgi verir..\n[r,avatar](https://discord.gg/yakinda)  == Etiketlediğiniz Kullanıcının Avatarını Verir.\n[r,istatistik](https://discord.gg/yakinda) == Botun istatistiklerini Göstir.\n[r,davet](https://discord.gg/yakinda) Botun Davet Linkini Atar.')
     .addField('❯  Destek Sistemimiz','`çağrılar` adında bir kanal açın.\n[r,çağır](https://discord.gg/yakinda) •Desteği Çağırır.\n[r,bildir](https://discord.gg/yakinda) •  Bildiriniz Yetkililere Gönderir.')
