@@ -6,7 +6,7 @@ exports.run = function(client, message, args) {
   }
   let mesajsayisi = parseInt(args.join(' '));
   if (mesajsayisi.length < 2) return message.channel.send('**1 ile 100 arası bir rakam yazmalısın**')
-  if (mesajsayisi > 101) return message.channel.send('**100 den fazla mesaj silemem!**');
+  if (mesajsayisi > 100) return message.channel.send('**100 den fazla mesaj silemem!**');
   message.channel.bulkDelete(mesajsayisi + 1);
   message.channel.send(mesajsayisi+" Adet Mesaj Siliyorum!")
   .then(m => {
