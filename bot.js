@@ -20,7 +20,7 @@ client.on("ready", guild => {
 });
 
 client.on("guildDelete", guild => {
-   client.channels.get("438704752633577482").sendMessage(`**--------------------------------------------------------------------------**\n__**SUNUCUDAN AYRILDIM**__\n\n   **Sunucu Adı**\n    ${guild.name}\n   **Sunucu ID**\n    ${guild.id}\n   **Sahibi**\n    ${guild.owner.user.tag}\n   **Sahip ID**\n    ${guild.owner.user.id}\n**--------------------------------------------------------------------------**`);
+   client.channels.get("439843991014473739").sendMessage(`**--------------------------------------------------------------------------**\n__**SUNUCUDAN AYRILDIM**__\n\n   **Sunucu Adı**\n    ${guild.name}\n   **Sunucu ID**\n    ${guild.id}\n   **Sahibi**\n    ${guild.owner.user.tag}\n   **Sahip ID**\n    ${guild.owner.user.id}\n**--------------------------------------------------------------------------**`);
 });
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
