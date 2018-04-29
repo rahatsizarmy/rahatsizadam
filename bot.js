@@ -11,27 +11,22 @@ var prefix = ayarlar.prefix;
 const log = message => {
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
 };
-client.on("guildCreate", guild => {
-    client.channels.get("439843991014473739").sendMessage(`**--------------------------------------------------------------------------**\n__**SUNUCUYA KATILDIM**__\n\n   **Sunucu Adı**\n    ${guild.name}\n   **Sunucu ID**\n    ${guild.id}\n   **Sahibi**\n    ${guild.owner.user.tag}\n   **Sahip ID**\n    ${guild.owner.user.id}\n**--------------------------------------------------------------------------**`);
-});
 
-client.on("guildDelete", guild => {
-   client.channels.get("439843991014473739").sendMessage(`**--------------------------------------------------------------------------**\n__**SUNUCUDAN AYRILDIM**__\n\n   **Sunucu Adı**\n    ${guild.name}\n   **Sunucu ID**\n    ${guild.id}\n   **Sahibi**\n    ${guild.owner.user.tag}\n   **Sahip ID**\n    ${guild.owner.user.id}\n**--------------------------------------------------------------------------**`);
-});
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 fs.readdir('./komutlar/', (err, files) => {
   if (err) console.error(err);
-  log(`${files.length} Komut Hazırlanacak.`);
+  log(`${files.length} komut yüklenecek.`);
   files.forEach(f => {
     let props = require(`./komutlar/${f}`);
-    log(`Hazır Komut  : ${props.help.name}.`);
+    log(`Yüklenen komut: ${props.help.name}.`);
     client.commands.set(props.help.name, props);
     props.conf.aliases.forEach(alias => {
       client.aliases.set(alias, props.help.name);
     });
   });
 });
+
 client.reload = command => {
   return new Promise((resolve, reject) => {
     try {
@@ -96,10 +91,6 @@ client.on('message', msg => {
 	msg.react('💜')
   }
 });
-
-
-
-
 client.elevation = message => {
   if(!message.guild) {
 	return; }
