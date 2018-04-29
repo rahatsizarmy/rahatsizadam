@@ -86,9 +86,9 @@ client.on('message', msg => {
 client.on('message', msg => {
   if (msg.content.toLowerCase() === 'sa') {
     msg.react('💚').then
-   msg.react('💜')
     msg.react('🇦')
     msg.react('🇸')
+    msg.react('💜')
   }
 });
 client.elevation = message => {
