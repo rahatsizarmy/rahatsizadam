@@ -91,6 +91,7 @@ client.on('message', msg => {
     console.log(`[${msg.author.tag}]  : ${msg.content}`);
     return;
   }
+};
 	client.on('message', msg => {
   if (msg.content.toLowerCase() === 'sa') {
     msg.react('🇦')
