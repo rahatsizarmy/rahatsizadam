@@ -5,7 +5,7 @@ exports.run = function(client, message, args) {
     return message.author.send('`sil` komutu sadece sunucularda kullanılabilir.');
   }
   let mesaj = args.slice(0).join(' ');
-  if (mesaj.length < 1) return message.reply('Yazmam için herhangi bir şey yazmalısın.');
+  if (mesaj.length < 1) return message.reply('100 ile 1 arası bir sayı yazman gerek.');
   if (mesaj > 100) return message.channel.send('**100 den fazla mesaj silemem!**')
   if (mesaj = 0) return message.channel.send('**1 ile 100 arası bir rakam yazmalısın**');
   message.channel.bulkDelete(mesaj + 1);
