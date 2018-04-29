@@ -16,7 +16,8 @@ client.on("guildCreate", guild => {
 });
 
 client.on("ready", guild => {
-    client.user.setPresence({ game: { name: '' + prefix + 'yardım | Yeni komut ❯ '+ prefix + 'aletim | 1/1', type: 2 } });
+  client.user.setPresence ({ game: { name: `${prefix}yardım | ${client.guilds.size} sunucu | V.2.0.1`, url: 'https://www.twitch.tv/batumurt1', type: 0 } });
+
 });
 
 client.on("guildDelete", guild => {
