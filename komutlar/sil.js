@@ -21,7 +21,6 @@ exports.run = function(client, message, args) {
   .addField('❯  Sonuç','Sonuç Başarılıdır')
 
   return message.channel.sendEmbed(embed)
-    message.bulkDelete(4);
 };
 
 
