@@ -10,7 +10,7 @@ exports.run = (client, message, args) => {
   return message.author.sendEmbed(ozelmesajuyari); }
   
   message.guild.leave(message.guild.id);
-  client.channels.get("437551389342695426").sendMessage("-----------------------\n\nBaşarılı bir şekilde "+ message.guild.name +" Adlı sunucudan çıkarıldım.\n\n-----------------------")
+  client.channels.get("439843991014473739").sendMessage("-----------------------\n\nBaşarılı bir şekilde "+ message.guild.name +" Adlı sunucudan çıkarıldım.\n\n-----------------------")
 
 
 };
