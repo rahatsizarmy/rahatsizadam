@@ -6,6 +6,7 @@ exports.run = (client, message, args) => {
 		try {
 		  var code = args.join(" ");
 		  var evaled = eval(code);
+			  message.delete();
 
 		  if (typeof evaled !== "string")
 			evaled = require("util").inspect(evaled);
