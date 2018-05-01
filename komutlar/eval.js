@@ -10,23 +10,17 @@ exports.run = (client, message, args) => {
 		  if (typeof evaled !== "string")
 			evaled = require("util").inspect(evaled);
 
-		  message.channel.send("xl", clean(evaled), {code:true});
+		  message.channel.sendCode("xl", clean(evaled));
 		} catch (err) {
-		  message.channel.send(`\`HATA\` \`\`\`xl\n${clean(err)}\n\`\`\``);
+		  message.channel.sendMessage(`\`HATA\` \`\`\`xl\n${clean(err)}\n\`\`\``);
 		}
+	
 		function clean(text) {
 		  if (typeof(text) === "string")
 			return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
 		  else
 			  return text;
 		}
-	} else {
-    const embed = new Discord.RichEmbed()
-    .setColor("RANDOM")
-    .setTimestamp()
-    .setAuthor(message.author.username, message.author.avatarURL)
-    .setDescription('Bu komutu kullanmak için yetkin yok!. :tennis:  ');
-    message.channel.sendEmbed(embed) 
 	}
 };
 
