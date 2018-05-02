@@ -13,7 +13,6 @@ exports.run = (client, message, params) => {
     if (message.channel.type !== 'dm') {
       const sunucubilgi = new Discord.RichEmbed()
       .setColor("RANDOM")
-    .setTimestamp()
     .setDescription(message.guild.name +' ('+ message.guild.id + ')')
     .setThumbnail(message.guild.iconURL)
     .setFooter(message.guild.name, message.guild.iconURL)
