@@ -1,22 +1,21 @@
 const Discord = require("discord.js");
 const moment = require("moment");
+
 require("moment-duration-format");
 
 exports.run = (client, message) => {
   const duration = moment.duration(client.uptime).format(" D [gün], H [saat], m [dakika], s [saniye]");
-  const embed = new Discord.RichEmbed()
+const embed = new Discord.RichEmbed()
 .setColor("RANDOM")
-.setTimestamp()
-.addField('• Bellek kullanımı ::  ',+(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)+' MB')
-.addField('• Çalışma süresi   ::  ',`${duration}`)
-.addField('• İşletim Sistemi  ::  ','Heroku')
-.addField('• Kullanıcılar     ::  ',`${client.users.size}`)
-.addField('• Kanallar         ::  ',`${client.channels.size.toLocaleString()}`)
-.addField('• Sunucular        ::  ',`${client.guilds.size.toLocaleString()}`)
-.addField('• Discord.JS sürüm ::  ',`v${Discord.version}`)
-.addField('• Pingim           ::  ',`${client.ping}`)
-.addField('• Yapımcı          ::  ','@ßatu Murt#7406')
+.setAuthor('İstatistikler',"https://cdn.discordapp.com/avatars/434771960849760258/b546921364b470cc10213d6c3e4ca6c3.png?size=2048")
+.setThumbnail("https://cdn.discordapp.com/avatars/434771960849760258/b546921364b470cc10213d6c3e4ca6c3.png?size=2048")
+.setFooter('© 2018 Rahatsız Adam|@ßatu Murt#7406 tarfından kodlandı.',"https://cdn.discordapp.com/avatars/434771960849760258/b546921364b470cc10213d6c3e4ca6c3.png?size=2048")
+.addField('❯  Açık kalma süresi: ',`${duration}`)
+.addField('❯  Sürümler:','Discord.JS:  v'+Discord.version+'\nBot:  v0.1.1')
+.addField('❯  Bellek kullaımı:',(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)+' MB')
+.addField('❯  Genel istatistikler','•Sunucu sayısı: '+ client.guilds.size.toLocaleString()+'\n•Kişi sayısı:  '+ client.users.size+'\n•Kanal sayısı: '+client.channels.size.toLocaleString()+'\n•Pingim:  '+client.ping)
 return message.channel.sendEmbed(embed);
+
 };
 exports.conf = {
   enabled: true,
