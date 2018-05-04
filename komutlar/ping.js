@@ -1,12 +1,12 @@
 const Discord = require('discord.js');
-exports.run = function(client, message, args) {
-    const embed = new Discord.RichEmbed()
-  .setColor("RANDOM")
-  .setAuthor(message.author.username, message.author.avatarURL)
-  .setDescription('Pingim   ==  '+ client.ping)
-    return message.channel.sendEmbed(embed);
-};
+const Jimp = require('jimp'); 
 
+exports.run = (client, message, args) => {
+      message.channel.send("...")
+      .then(nmsg => nmsg.edit(new Discord.RichEmbed().setColor('RANDOM').setDescription(`:ping_pong: Mesaj Gecikmesi: ${message.createdTimestamp} ms. Normal Gecikme: ${client.ping}`)))
+        };
+message: 'b-g'
+  };
 exports.conf = {
   enabled: true,
   guildOnly: false,
