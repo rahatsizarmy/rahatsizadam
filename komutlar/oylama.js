@@ -6,9 +6,9 @@ exports.run = (client, message, args) => {
     message.channel.send("@here")
 const embed = new Discord.RichEmbed()
 .setColor('RANDOM')
-.setFooter(message.guild.username, message.author.avatarURL)
+.setFooter(message.author.username, message.author.avatarURL)
 .setDescription(mesaj)
-.setAuthor(message.guild.username,message.guild.iconURL)
+.setAuthor(message.guild.name,message.guild.iconURL)
 message.channel.send(embed).then(msg => {
 
   msg.react('✔').then(r => {
