@@ -6,7 +6,7 @@ exports.run = (client, message, args) => {
     message.channel.send("@here")
 const embed = new Discord.RichEmbed()
 .setColor('RANDOM')
-.setFooter(message.author.username, message.author.avatarURL)
+    .setAuthor(message.author.username, message.author.avatarURL)
 .setDescription(mesaj)
 .setAuthor(message.guild.name,message.guild.iconURL)
 message.channel.send(embed).then(msg => {
