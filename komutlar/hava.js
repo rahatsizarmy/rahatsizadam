@@ -4,14 +4,6 @@ module.exports.run = async(bot, message, args) => {
 const api = 'http://api.openweathermap.org/data/2.5/weather?q=' + args[0] + '&appid=9085d68629e6d57983a2c93a8fa2cd66';
  let mesaj = args.slice(0).join(' ');   
  if (mesaj.length < 1) return message.reply('Bir şehir ismi yazmalsınız.');
- try {
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-    function Get(yourUrl){ 
-      var Httpreq = new XMLHttpRequest(); //yagag
-      Httpreq.open("GET",yourUrl,false);
-      Httpreq.send(null);
-      return Httpreq.responseText; 
-    }
     var json = JSON.parse(Get(api));
     var coord = json.coord;
     var weather = json.weather[0];
