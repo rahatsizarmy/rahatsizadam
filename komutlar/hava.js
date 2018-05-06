@@ -124,12 +124,7 @@ return text;
     .addField('Güneş','Gündoğumu: **' + UnixToDate(sys.sunrise) + '**\nGünbatımı: **' + UnixToDate(sys.sunset) + '**',inline=true)    
     return message.channel.sendEmbed(embed); 
 }
-catch (e) {
-    const error = new discord.RichEmbed()
-    .setColor('RANDOM')
-    .setDescription('Bir hata ile karşılaştık : \n`' + e.message + '`')
-    return message.channel.sendEmbed(error);
-}
+
     }; 
 
 exports.conf = {
