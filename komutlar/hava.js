@@ -123,8 +123,6 @@ return text;
     .addField('Hava Koşulları', 'Mevcut Sıcaklık: **' + ccelsius + ' °C / ' + cfahrenheit + ' °F**\nEn Yüksek Sıcaklık: **' + hcelsius + ' °C / ' + hfahrenheit + ' °F**\nEn Düşük Sıcaklık: **' + lcelsius + ' °C / ' + lfahrenheit + ' °F**\nNem: **%' + main.humidity + '**\nBarometrik Basınç: **' + main.pressure + '**', inline=true)    //.addField('Güneş', 'Gündoğumu: **' + UnixToDate(sys.sunrise)[1] + '**\nGünbatımı: **' + UnixToDate(sys.sunset)[1] + '**', inline=true)
     .addField('Güneş','Gündoğumu: **' + UnixToDate(sys.sunrise) + '**\nGünbatımı: **' + UnixToDate(sys.sunset) + '**',inline=true)    
     return message.channel.sendEmbed(embed); 
-}
-
     }; 
 
 exports.conf = {
