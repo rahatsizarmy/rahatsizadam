@@ -4,6 +4,14 @@ module.exports.run = async(bot, message, args) => {
 const api = 'http://api.openweathermap.org/data/2.5/weather?q=' + args[0] + '&appid=9085d68629e6d57983a2c93a8fa2cd66';
  let mesaj = args.slice(0).join(' ');   
  if (mesaj.length < 1) return message.reply('Bir şehir ismi yazmalsınız.');
+ try {
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+    function Get(yourUrl){ 
+      var Httpreq = new XMLHttpRequest(); //yagag
+      Httpreq.open("GET",yourUrl,false);
+      Httpreq.send(null);
+      return Httpreq.responseText; 
+    }
     var json = JSON.parse(Get(api));
     var coord = json.coord;
     var weather = json.weather[0];
@@ -123,17 +131,24 @@ return text;
     .addField('Hava Koşulları', 'Mevcut Sıcaklık: **' + ccelsius + ' °C / ' + cfahrenheit + ' °F**\nEn Yüksek Sıcaklık: **' + hcelsius + ' °C / ' + hfahrenheit + ' °F**\nEn Düşük Sıcaklık: **' + lcelsius + ' °C / ' + lfahrenheit + ' °F**\nNem: **%' + main.humidity + '**\nBarometrik Basınç: **' + main.pressure + '**', inline=true)    //.addField('Güneş', 'Gündoğumu: **' + UnixToDate(sys.sunrise)[1] + '**\nGünbatımı: **' + UnixToDate(sys.sunset)[1] + '**', inline=true)
     .addField('Güneş','Gündoğumu: **' + UnixToDate(sys.sunrise) + '**\nGünbatımı: **' + UnixToDate(sys.sunset) + '**',inline=true)    
     return message.channel.sendEmbed(embed); 
+}
+catch (e) {
+    const error = new discord.RichEmbed()
+    .setColor('RANDOM')
+    .setDescription('Bir hata ile karşılaştık : \n`' + e.message + '`')
+    return message.channel.sendEmbed(error);
+}
     }; 
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
-aliases: ['hd'],
+aliases: ['havadurumu'],
   permLevel: 0
 };
 
 exports.help = {
   name: 'havadurumu',
   description: 'İstediğiniz şeyi bota yazdırır.',
-  usage: 'fly!havadurumu'
+  usage: 'duyuru [duyuru]'
 };
