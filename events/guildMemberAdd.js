@@ -1,4 +1,5 @@
 module.exports = member => {
-    let username = member.user.username;
-
+  const channel = member.guild.channels.find('name', 'giriş-çıkış');
+  if (!channel) return;
+  channel.send(`:outbox_tray: **|${member} sunucuya katıldı.`);
 };
