@@ -25,11 +25,11 @@ exports.run = (client, message, args) => {
     enabled: true,
     guildOnly: true,
     aliases: ['destek'],
-    permLevel: 2
+    permLevel: 0
   };
   
   exports.help = {
-    name: 'dstek',
+    name: 'bildir',
     description: 'Desteği Çağırır',
-    usage: 'destek'
+    usage: 'bildir <bildiriniz>'
   };
