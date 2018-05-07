@@ -17,7 +17,7 @@ exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: ['yayin+', 'twitch-on', 'yayin-ac', 'yayın'],
-  permLevel: 4
+  permLevel: 0
 };
 
 exports.help = {
