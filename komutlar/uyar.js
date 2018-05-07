@@ -29,7 +29,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'uyar2',
+  name: 'uyar',
   description: 'Botun Pingini GÃ¶sterir.',
   usage: 'ping'
 };
