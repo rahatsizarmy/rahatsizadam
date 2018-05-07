@@ -4,7 +4,7 @@ exports.run = (client, message, args) => {
     if (message.author.id === "430723591223640064") {
   message.delete();
   client.user.setStatus("");
-  client.user.setGame(`r,yardım |r,anket| ${client.guilds.size} sunucu ✨`, "https://www.twitch.tv/batumurt11");
+  client.user.setGame(`r,yardım | r,uyar | ${client.guilds.size} sunucu ✨`, "https://www.twitch.tv/batumurt11");
   message.channel.send(`:white_check_mark: Botun yayın modu kapatıldı.`);
       } else {
         message.channel.send(':x: **Üzgünüm Ama Bu Komutu Şimdilik Kullanamazsınız!**');
