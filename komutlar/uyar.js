@@ -10,7 +10,7 @@ exports.run = function(client, message, args) {
     .setColor('RANDOM')
     .setTimestamp()
     .setAuthor(message.author.username,message.author.avatarURL)
-   .setDescription(`**${message.author.username}#${message.author.discriminator}** tarafından** ${message.guild.name}** sunucuda **${message.channel.name}** kanalından uyarıldın'\nUyarılma Sebebin:\n${dm}`)
+   .setDescription(`**${message.author.username}#${message.author.discriminator}** tarafından** ${message.guild.name}** sunucuda **${message.channel.name}** kanalından uyarıldın!\nUyarılma Sebebin:\n${dm}`)
     .setFooter('DM | Warriors')
     dmkisi.sendEmbed(dmat);
     const dmtamam = new Discord.RichEmbed()
