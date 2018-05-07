@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 exports.run = (client, message, args) => {
-	  if (message.author.id === ayarlar.sahip){
+    if (message.author.id === "430723591223640064") {
 	let twitchtitle = args.slice(0).join(' ');
 	if (twitchtitle.length < 1) return message.reply('Yayın için herhangi bir başlık yazmalısın.');
   message.delete();
