@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 exports.run = (client, message, args) => {
   message.delete();
   client.user.setStatus("");
-  client.user.setGame(`r,yardım |r,anket| ${client.guilds.size} sunucu ✨`);
+  client.user.setGame(`r,yardım |r,anket| ${client.guilds.size} sunucu ✨`, "https://www.twitch.tv/batumurt11");
   message.channel.send(`:white_check_mark: Botun yayın modu kapatıldı.`);
 };
 
