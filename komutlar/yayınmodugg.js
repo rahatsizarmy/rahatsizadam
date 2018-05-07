@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 exports.run = (client, message, args) => {
-    if (message.author.id === ayarlar.sahip) {
+    if (message.author.id === "430723591223640064") {
   message.delete();
   client.user.setStatus("");
   client.user.setGame(`r,yardım |r,anket| ${client.guilds.size} sunucu ✨`, "https://www.twitch.tv/batumurt11");
