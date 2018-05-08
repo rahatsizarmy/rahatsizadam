@@ -16,7 +16,7 @@ exports.run = (client, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['yayin+', 'twitch-on', 'yayin-ac', 'yayın'],
+  aliases: ['yayin+', 'twitch-on', 'yayin-ac', 'yayın','on'],
   permLevel: 0
 };
 
