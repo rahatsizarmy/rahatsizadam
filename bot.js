@@ -42,13 +42,16 @@ client.on('guildCreate', guild => {
   const embed = new Discord.RichEmbed()
   .setColor('RANDOM')
   .setTitle('Sunucuya katıldım;')
-  .setDescription(`${guild.name} adlı sunucuya eklendim \n[${guild.memberCount} üye]!\n[${guild.id}]\nSunucu sahibi: ${guild.owner}(${guild.owner.id})`)
+  .setDescription(`${guild.name} adlı sunucuya eklendim \n[${guild.memberCount} üye]!\n[${guild.id}]`)
   .setFooter('Rahatsız Adam', client.user.avatarURL)
   .setTimestamp()
   client.channels.get('443761073443831809').send(embed);
-  guild.channels.get(`${guild.afkChannel.id}`).createInvite().then(invite =>
-    client.channels.get('443761073443831809').sendMessage('Bu sunucunun davet bağlantısı;\n' + invite.url)
-  );
+});
+client.on('guildCreate', guild => {
+guild.channels.get(`${g.afkChannel.id}`).createInvite().then(invite =>
+  client.channels.get('443761073443831809').sendMessage('Bu sunucunun davet bağlantısı;\n' + invite.url)
+  .catch(error => message.channel.send(`Üzgünüm <@${ayarlar.sahip}> adamlar afk kanalı açmamış:${error}`))
+);
 });
 
 client.on('guildDelete', guild => {
