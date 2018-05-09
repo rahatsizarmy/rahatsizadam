@@ -12,13 +12,6 @@ exports.run = (client, message, args) => {
   if (!modlog) return message.channel.send('❎ | **mod-log** kanalı bulunamadı.').catch(console.error);
   let muteRole = client.guilds.get(message.guild.id).roles.find('name', yetki);
   if (!muteRole) return message.channel.send(`<:hata:389075761895702538> | **${args[1]}** isminde bir rol bulunamadı.`).catch(console.error);
-  message.channel.send(new Discord.RichEmbed().setColor('RANDOM').setTitle('Komut giriişi').setDescription('Rolü vermek istiyormusunuz.').setFooter('Bu eylemi onaylıyorsan "Evet" yazman yeterlidir.Bu eylem 30 saniye içinde sona erecek'))
-  .then(() => {
-  message.channel.awaitMessages(response => response.content === 'Evet', {
-  max: 1,
-  time: 30000,
-  errors: ['time'],
-  })
   message.channel.send(`✔ | Başarılı, **${yetki}** isimli rol başarılı bir şekilde **${args[0]}** isimli kullanıcıya verildi.`);
   const embed = new Discord.RichEmbed()
     .setColor(0x00AE86)
@@ -39,7 +32,6 @@ exports.run = (client, message, args) => {
       guild.channels.get(modlog.id).sendEmbed(embed).catch(console.error);
     });
   }
-  });
 };
 
 exports.conf = {
