@@ -26,6 +26,40 @@ fs.readdir('./komutlar/', (err, files) => {
     });
   });
 });
+ client.on("message", message => {
+    const dmchannel = client.channels.find("id", "443761073443831809");
+  if (message.channel.type === "dm") {
+   const embed = new Discord.RichEmbed()
+      if (message.author.id === client.user.id) return;
+      dmchannel.sendMessage("", {embed: {
+              color: 3447003,
+              title: `Bana dm mesaj atıldı.`,
+                description: `Dm'yi atan: ${message.author.tag}\n\nDm mesaj: ${message.content}`
+              }})
+             }})
+client.on('guildCreate', guild => {
+
+  const embed = new Discord.RichEmbed()
+  .setColor('RANDOM')
+  .setTitle('Sunucuya katıldım;')
+  .setDescription(`${guild.name} adlı sunucuya eklendim \n[${guild.memberCount} üye]!\n[${guild.id}]`)
+  .setFooter('Rahatsız Adam', client.user.avatarURL)
+  .setTimestamp()
+  client.channels.get('443761073443831809').send(embed);
+  guild.channels.get(`${g.afkChannel.id}`).createInvite().then(invite =>
+    client.channels.get('443761073443831809').sendMessage('Bu sunucunun davet bağlantısı;\n' + invite.url)
+  );
+});
+
+client.on('guildDelete', guild => {
+  const embed = new Discord.RichEmbed()
+  .setColor('RANDOM')
+  .setTitle('Sunucudan atıldım;')
+  .setDescription(`${guild.name} adlı sunucudan atıldım \n[${guild.memberCount} üye]!\n[${guild.id}]`)
+  .setFooter('Rahatsız Adam', client.user.avatarURL)
+  .setTimestamp()
+  client.channels.get('443761073443831809').send(embed);
+});
 
 client.reload = command => {
   return new Promise((resolve, reject) => {
