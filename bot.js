@@ -47,12 +47,6 @@ client.on('guildCreate', guild => {
   .setTimestamp()
   client.channels.get('443761073443831809').send(embed);
 });
-client.on('guildCreate', guild => {
-guild.channels.get(`${g.afkChannel.id}`).createInvite().then(invite =>
-  client.channels.get('443761073443831809').sendMessage('Bu sunucunun davet bağlantısı;\n' + invite.url)
-  .catch(error => message.channel.send(`Üzgünüm <@${ayarlar.sahip}> adamlar afk kanalı açmamış:${error}`))
-);
-});
 
 client.on('guildDelete', guild => {
   const embed = new Discord.RichEmbed()
