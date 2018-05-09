@@ -119,9 +119,12 @@ client.on('message', msg => {
 });
 client.on('message', msg => {
   if (msg.content.toLowerCase() === 'sa') {
-msg.react('🇦').then
-      msg.react('🇸')
-  }
+    setTimeout(() => {
+	msg.react('🇦');
+	},500);
+	setTimeout(() => {
+	msg.react('🇸');
+	},1000);
 });
 client.elevation = message => {
   if(!message.guild) {
