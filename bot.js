@@ -125,7 +125,9 @@ client.on('message', msg => {
 	setTimeout(() => {
 	msg.react('🇸');
 	},1000);
-});
+
+	}
+	});
 client.elevation = message => {
   if(!message.guild) {
 	return; }
