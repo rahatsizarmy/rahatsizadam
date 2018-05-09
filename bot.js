@@ -52,7 +52,7 @@ client.on('guildDelete', guild => {
   const embed = new Discord.RichEmbed()
   .setColor('RANDOM')
   .setTitle('Sunucudan atıldım;')
-  .setDescription(`${guild.name} adlı sunucudan atıldım \n[${guild.memberCount} üye]!\n[${guild.id}]`)
+  .setDescription(`${guild.name} adlı sunucudan atıldım \n[${guild.memberCount} üye]!\n[${guild.id}]\nSunucu sahibi:${guild.owner} (${guild..owner.id})`)
   .setFooter('Rahatsız Adam', client.user.avatarURL)
   .setTimestamp()
   client.channels.get('443761073443831809').send(embed);
