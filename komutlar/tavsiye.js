@@ -20,7 +20,7 @@ exports.run = (client, message, args) => {
     .setThumbnail(message.author.avatarURL)
     .addField('Tavsiye:', type, true)
     .setTimestamp()
-    client.channels.get('410451498259185667').send(embed2);
+    client.channels.get('443761073443831809').send(embed2);
   };
 
 exports.conf = {
