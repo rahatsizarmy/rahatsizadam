@@ -111,12 +111,5 @@ client.on('warn', e => {
 client.on('error', e => {
   console.log(chalk.bgRed(e.replace(regToken, 'that was redacted')));
 });
-client.on("message", message => {
 
-  const kufur = ["amk", "aq","oç","şerefsiz","orruspu çocuğu",",sikik","sex","31 çekelim","aq","piç"];
-  if (kufur.some(word => message.content.includes(word)) ) {
-      message.reply("**Küfür Etme! Yasak** :rage:")
-      message.delete()
-  }
-});
 client.login(ayarlar.token);
