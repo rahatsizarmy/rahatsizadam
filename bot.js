@@ -57,7 +57,25 @@ client.on('guildDelete', guild => {
   .setTimestamp()
   client.channels.get('443761073443831809').send(embed);
 });
+client.on('guildMemberAdd', member => {
+  const hg = new Discord.RichEmbed()
+  .setThumbnail(client.users.avatarURL)
+  .setDescription(`${member.guild.name} Sunucuya hoşgeldin!\nBu sunucuda **Rahatsız Adam** sistemi kullanılmakta.\n[Sende Beni Eklemek İçin Tıkla](https://discordapp.com/oauth2/authorize?client_id=434771960849760258&scope=bot&permissions=2146958591)\n[Sende Destek Sunucumuza Gelmek İçin Tıkla](https://discord.gg/tn4nPxh)`)
+  .setFooter(`© Rahatsız Adam`)
+  .setColor('RANDOM')
+  member.send(hg);
+});
 
+client.on('guildMemberRemove', member => {
+  const bb = new Discord.RichEmbed()
+  .setAuthor(client.user.username, client.user.avatarURL)
+  .setThumbnail(member.user.displayAvatarURL)
+  .setDescription(`${member.guild.name} sunucusundan ayrıldın.Seni özliyeceğiz.\nBu sunucuda **Rahatsız Adam** sistemi kullanılmaktadır.\n[Sende Beni Eklemek İçin Tıkla](https://discordapp.com/oauth2/authorize?client_id=434771960849760258&scope=bot&permissions=2146958591)\n[Sende Destek Sunucumuza Gelmek İçin Tıkla](https://discord.gg/tn4nPxh)`)
+  .setFooter(`© Rahatsız Adam`)
+  .setTimestamp()
+  .setColor('RANDOM')
+  member.send(bb);
+});
 client.reload = command => {
   return new Promise((resolve, reject) => {
     try {
