@@ -20,11 +20,11 @@ console.log('Bot hazır ve giriş yaptı.');
 
         "r,kurulum ✨",
     
-        "Destek sunucuma gelmeyi unutma: https://discord.gg/tn4nPxh ✨",
+        "Destek sunucum: https://discord.gg/tn4nPxh ✨",
 		
-		`${client.guilds.size} Sunucu ${client.users.size} Kullanıcıya Hizmet Veriyor ✨`,
+		`${client.guilds.size} Sunucu ${client.users.size} kullanıcı ✨`,
 		
-		`Komutlarımı görmek için ${prefix}yardım ✨`,
+		`${prefix}yardım ✨`,
 		
 		`Beni Davet Etmek İçin ${prefix}davet ✨`,
 
